@@ -34,4 +34,12 @@ echo "$RUN_CRON_EXPRESSION" > check-ip-cron
 crontab check-ip-cron
 rm check-ip-cron
 
+
+echo "Running check-ip at startup"
+/bin/bash /check-ip.sh
+
+echo ""
+echo ""
+echo "*** CONTAINER STARTED ***"
+
 exec "$@"

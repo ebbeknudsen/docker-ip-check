@@ -8,7 +8,7 @@ if [ -z "$TAG"]; then
 fi
 
 echo "Building docker image ghcr.io/ebbeknudsen/ip-check with tags: $TAG and latest"
-docker build -t ghcr.io/ebbeknudsen/ip-check:$TAG -t ghcr.io/ebbeknudsen/ip-check:latest .
+docker build -t ghcr.io/ebbeknudsen/ip-check:$TAG -t ghcr.io/ebbeknudsen/ip-check:latest . --network=host
 
 echo "Pushing all tags to ghcr.io/ebbeknudsen/ip-check"
 docker push --all-tags ghcr.io/ebbeknudsen/ip-check
