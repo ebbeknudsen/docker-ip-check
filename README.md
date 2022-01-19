@@ -21,5 +21,5 @@ By running the above the IP check runs every minute, and logs to docker logs. Ho
 
 ## Configuration
 * Customize how often it runs by supplying the `CRON_EXPRESSION` environment variable to docker compose. Example: `- CRON_EXPRESSION=*/5 * * * *`
-* Customize what to do when your IP changes by editing the `/scripts/ip-changed.sh` script file
-* Customize what to do after ever IP check run by editing the `/scripts/ip-check-finished.sh` script file
+* Customize what to do when your IP changes by editing the `${DATADIR}/ip-check/ip-changed.sh` script file. The IP's are provided as arguments to the script (eg. `NEW_IP=$1` and `OLD_IP=$2`)
+* Customize what to do after every IP check run by editing the `${DATADIR}/ip-check/ip-check-finished.sh` script file. The IP's are provided as arguments to the script (eg. `CURRENT_IP=$1` and `OLD_IP=$2`)
