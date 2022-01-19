@@ -12,9 +12,12 @@ CHANGED_LOG="Detected an IP change. Old: $OLD_IP, new: $CUR_IP"
 
 if [ "$OLD_IP" == "$CUR_IP" ]; then
   echo "$UNCHANGED_LOG"
+  echo ""
 
 else
   echo "$CHANGED_LOG"
+  echo ""
+
   echo "$(date): $CHANGED_LOG" >> $CHANGE_LOGFILE
 
   echo "$CUR_IP" > $ADDRESS_LOGFILE
