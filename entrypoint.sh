@@ -26,9 +26,9 @@ do
 done
 echo ""
 
-ENV_CRON_EXPRESSION="${CRON_EXPRESSION:-*/1 * * * *}"
+CRON_EXPRESSION="${CRON_EXPRESSION:-*/1 * * * *}"
 
-RUN_CRON_EXPRESSION="$ENV_CRON_EXPRESSION /check-ip.sh"
+RUN_CRON_EXPRESSION="$CRON_EXPRESSION /check-ip.sh"
 echo "Running CRON expression: $RUN_CRON_EXPRESSION"
 echo "$RUN_CRON_EXPRESSION" > check-ip-cron
 crontab check-ip-cron
